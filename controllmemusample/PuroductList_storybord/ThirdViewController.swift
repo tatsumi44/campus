@@ -120,17 +120,17 @@ class ThirdViewController: UIViewController,UICollectionViewDataSource,UICollect
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cellSize1:CGFloat = mainCollectionView.frame.size.width/3 - 3
-        let cellSize2: CGFloat = mainCollectionView.frame.size.height/3 - 3
+        let cellSize1:CGFloat = mainCollectionView.frame.size.width/3
+        let cellSize2: CGFloat = mainCollectionView.frame.size.height/3 
         // 正方形で返すためにwidth,heightを同じにする
         return CGSize(width: cellSize1, height: cellSize2)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
