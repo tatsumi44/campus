@@ -17,7 +17,7 @@ class EventViewController: UIViewController,UITableViewDataSource,UITableViewDel
     var eventArray = [Event]()
     var numOfCell:Int!
     var name : String!
-    var profilePath : StorageReference!
+    var profilePath = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         maintableView.dataSource = self
@@ -82,21 +82,26 @@ class EventViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 let data = snap?.data()
                 nameLabel.text = data!["name"] as? String
                 self.name = data!["name"] as? String
-                let imagePath = data!["profilePath"] as? String
                 
-                let storage = Storage.storage().reference()
-                let path = storage.child("image/profile/\(imagePath!)")
-                self.profilePath = storage.child("image/profile/\(imagePath!)")
-                path.downloadURL { url, error in
-                    if let error = error {
-                        self.alert(message: error.localizedDescription)
-                        print(error.localizedDescription)
-                        // Handle any errors
-                    } else {
-                        //imageViewに描画、SDWebImageライブラリを使用して描画
-                        imageView.sd_setImage(with: url!, completed: nil)
+                if let imagePath = data!["profilePath"] as? String{
+                    let storage = Storage.storage().reference()
+                    let path = storage.child("image/profile/\(imagePath)")
+                    self.profilePath.append("\(imagePath)")
+                    path.downloadURL { url, error in
+                        if let error = error {
+                            self.alert(message: error.localizedDescription)
+                            print(error.localizedDescription)
+                            // Handle any errors
+                        } else {
+                            //imageViewに描画、SDWebImageライブラリを使用して描画
+                            imageView.sd_setImage(with: url!, completed: nil)
+                        }
                     }
+                }else{
+                  self.profilePath.append("none")
                 }
+                
+             
             }
         }
         
@@ -112,7 +117,7 @@ class EventViewController: UIViewController,UITableViewDataSource,UITableViewDel
             let eventDetailViewController = segue.destination as! EventDetailViewController
             eventDetailViewController.event = self .eventArray[numOfCell]
             eventDetailViewController.name = self.name
-            eventDetailViewController.profilePath = self.profilePath
+            eventDetailViewController.profilePath = self.profilePath[numOfCell]
         }
     }
 

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,13 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork-2" translatesAutoresizingMaskIntoConstraints="NO" id="f02-nS-0eQ">
-                                <rect key="frame" x="0.0" y="64.000000000000028" width="414" height="389.66666666666674"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="f02-nS-0eQ" secondAttribute="height" multiplier="375:353" id="jlb-D4-yFW"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="414" height="492"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-4K-9Or">
-                                <rect key="frame" x="80" y="563.66666666666663" width="254" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAb-4K-9Or">
+                                <rect key="frame" x="80" y="666" width="254" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="新規登録">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-gM-7H0">
-                                <rect key="frame" x="80" y="493.66666666666669" width="254" height="30.000000000000057"/>
+                                <rect key="frame" x="80" y="596" width="254" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="ログイン">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,17 +45,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eOH-gM-7H0" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" constant="80" id="1LO-KH-th4"/>
-                            <constraint firstItem="EZs-ze-09Y" firstAttribute="trailing" secondItem="eOH-gM-7H0" secondAttribute="trailing" constant="80" id="6DW-gt-Wc5"/>
-                            <constraint firstItem="f02-nS-0eQ" firstAttribute="trailing" secondItem="EZs-ze-09Y" secondAttribute="trailing" id="F3a-Qr-XN4"/>
-                            <constraint firstItem="cAb-4K-9Or" firstAttribute="top" secondItem="eOH-gM-7H0" secondAttribute="bottom" constant="40" id="KPv-jn-R6Y"/>
-                            <constraint firstItem="f02-nS-0eQ" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" id="Kmf-oZ-JFV"/>
-                            <constraint firstItem="eOH-gM-7H0" firstAttribute="top" secondItem="f02-nS-0eQ" secondAttribute="bottom" constant="40" id="Mak-Av-gNB"/>
-                            <constraint firstItem="f02-nS-0eQ" firstAttribute="top" secondItem="EZs-ze-09Y" secondAttribute="top" id="Mbj-Vl-8bt"/>
-                            <constraint firstItem="EZs-ze-09Y" firstAttribute="trailing" secondItem="cAb-4K-9Or" secondAttribute="trailing" constant="80" id="OW4-u4-fYY"/>
-                            <constraint firstItem="EZs-ze-09Y" firstAttribute="trailing" secondItem="eOH-gM-7H0" secondAttribute="trailing" constant="80" id="iYI-mo-imm"/>
-                            <constraint firstItem="cAb-4K-9Or" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" constant="80" id="kXx-Qd-g10"/>
-                            <constraint firstItem="eOH-gM-7H0" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" constant="80" id="khF-i2-viG"/>
+                            <constraint firstItem="eOH-gM-7H0" firstAttribute="width" secondItem="cAb-4K-9Or" secondAttribute="width" id="8b6-Ve-SX4"/>
+                            <constraint firstItem="cAb-4K-9Or" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" constant="80" id="CMa-eL-UE5"/>
+                            <constraint firstItem="f02-nS-0eQ" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" id="KHy-Ho-oqs"/>
+                            <constraint firstItem="EZs-ze-09Y" firstAttribute="bottom" secondItem="cAb-4K-9Or" secondAttribute="bottom" constant="40" id="UFI-In-6z4"/>
+                            <constraint firstItem="eOH-gM-7H0" firstAttribute="top" secondItem="f02-nS-0eQ" secondAttribute="bottom" constant="40" id="VrJ-aT-TIt"/>
+                            <constraint firstItem="f02-nS-0eQ" firstAttribute="top" secondItem="EZs-ze-09Y" secondAttribute="top" id="Yxv-OD-B5e"/>
+                            <constraint firstItem="f02-nS-0eQ" firstAttribute="trailing" secondItem="EZs-ze-09Y" secondAttribute="trailing" id="gaO-r5-ew8"/>
+                            <constraint firstItem="EZs-ze-09Y" firstAttribute="trailing" secondItem="eOH-gM-7H0" secondAttribute="trailing" constant="80" id="lkZ-na-Nyf"/>
+                            <constraint firstItem="eOH-gM-7H0" firstAttribute="leading" secondItem="EZs-ze-09Y" secondAttribute="leading" constant="80" id="rfH-s5-erb"/>
+                            <constraint firstItem="eOH-gM-7H0" firstAttribute="height" secondItem="cAb-4K-9Or" secondAttribute="height" id="t6d-Dj-KQA"/>
+                            <constraint firstItem="cAb-4K-9Or" firstAttribute="top" secondItem="eOH-gM-7H0" secondAttribute="bottom" constant="40" id="y4M-Pg-Dls"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EZs-ze-09Y"/>
                     </view>
@@ -311,6 +307,6 @@
         <image name="iTunesArtwork-2" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yUa-bz-3di"/>
+        <segue reference="FcW-08-U2f"/>
     </inferredMetricsTieBreakers>
 </document>

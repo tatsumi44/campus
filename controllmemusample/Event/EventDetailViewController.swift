@@ -23,7 +23,7 @@ class EventDetailViewController: UIViewController,UITableViewDataSource,UITableV
     var realtimeDB: DatabaseReference!
     var db: Firestore!
     var name : String!
-    var profilePath : StorageReference!
+    var profilePath : String!
     var contentsArray = [String: String]()
     var getArray = [String]()
     var getMainArray = [[String]]()
@@ -58,17 +58,24 @@ class EventDetailViewController: UIViewController,UITableViewDataSource,UITableV
         eventDate.text = event.eventDate
         eventDetail.text = event.evetDetail
         postName.text = event.postUserName
-        profilePath.downloadURL { url, error in
-            if let error = error {
-                self.alert(message: error.localizedDescription)
-                print(error.localizedDescription)
-                // Handle any errors
-            } else {
-                //imageViewに描画、SDWebImageライブラリを使用して描画
-                self.imageView.sd_setImage(with: url!, completed: nil)
-                
+        let storage = Storage.storage().reference()
+        if profilePath != "none"{
+            let path = storage.child("image/profile/\(profilePath!)")
+            path.downloadURL { url, error in
+                if let error = error {
+                    self.alert(message: error.localizedDescription)
+                    print(error.localizedDescription)
+                    // Handle any errors
+                } else {
+                    //imageViewに描画、SDWebImageライブラリを使用して描画
+                    self.imageView.sd_setImage(with: url!, completed: nil)
+                    
+                }
             }
+        }else{
+            print("何もない")
         }
+       
         
         // Do any additional setup after loading the view.
     }
